@@ -1,0 +1,134 @@
+<div class="container">
+  <h3>Nuevo Empleado</h3>
+  <hr class="espacio" />
+  <form [formGroup]="formEmpleado" class="espacio">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="mb-6 row">
+          <label for="inputNombre" class="col-sm-2 col-form-label"
+            >firstName</label
+          >
+          <div class="col-sm-5">
+            <input
+              formControlName="firstName"
+              type="text"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                formEmpleado.controls['firstName'].invalid &&
+                formEmpleado.controls['firstName'].dirty
+              "
+            >
+              <span style="color: red">firstName es obligatorio!!.</span>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="mb-6 row">
+          <label for="inputFecha" class="col-sm-2 col-form-label"
+            >lastName</label
+          >
+          <div class="col-sm-5">
+            <input
+              formControlName="lastName"
+              type="text"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                formEmpleado.controls['lastName'].invalid &&
+                formEmpleado.controls['lastName'].dirty
+              "
+            >
+              <span style="color: red">lastName obligatorio!!.</span>
+            </div>
+          </div>
+        </div>
+        <br />
+
+        <div class="mb-6 row">
+          <label for="inputUsuario" class="col-sm-2 col-form-label"
+            >DocumentNumber</label
+          >
+          <div class="col-sm-5">
+            <input
+              formControlName="documentNumber"
+              type="text"
+              class="form-control"
+            />
+            <div
+              *ngIf="
+                formEmpleado.controls['documentNumber'].invalid &&
+                formEmpleado.controls['documentNumber'].dirty
+              "
+            >
+              <span style="color: red">documentNumber obligatorio !!.</span>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="mb-6 row">
+          <label for="inputFecha" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-5">
+            <input formControlName="Title" type="text" class="form-control" />
+            <div
+              *ngIf="
+                formEmpleado.controls['Title'].invalid &&
+                formEmpleado.controls['Title'].dirty
+              "
+            >
+              <span style="color: red">Title es obligatorio!!.</span>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="mb-6 row">
+          <label for="inputFecha" class="col-sm-2 col-form-label">Avatar</label>
+          <div class="col-sm-5">
+            <input formControlName="avatar" type="text" class="form-control" />
+            <div
+              *ngIf="
+                formEmpleado.controls['avatar'].invalid &&
+                formEmpleado.controls['avatar'].dirty
+              "
+            >
+              <span style="color: red">avatar es obligatorio!!.</span>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+    <br /><br />
+    <div class="row">
+      <div
+        class="col-lg-2"
+        style="display: flex; justify-content: space-between"
+      >
+        <button
+          class="btn btn-secondary"
+          title="Volver a lista empleados"
+          routerLink="/listar"
+        >
+          <span style="margin: 5px"> < Atrás </span>
+        </button>
+
+        <button
+          [disabled]="!formEmpleado.valid"
+          class="btn btn-primary"
+          title="Guardar empleado"
+          (click)="addEmpleado()"
+        >
+          <span style="margin: 5px">Guardar</span>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div *ngIf="bandera">
+    <hr />
+    <div class="alert alert-primary" role="alert">
+      Se registro empleado con exito.
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="container">
+  <h3>Ver: {{ nombreEmpleado }}</h3>
+  <hr class="espacio" />
+  <form [formGroup]="formEmpleado" class="espacio">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="mb-6 row">
+          <label for="inputText" class="col-sm-2 col-form-label"
+            >firstName</label
+          >
+          <div class="col-sm-5">
+            <input
+              formControlName="firstName"
+              type="text"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <br />
+
+        <div class="mb-6 row">
+          <label for="inputText" class="col-sm-2 col-form-label"
+            >lastName</label
+          >
+          <div class="col-sm-5">
+            <input
+              formControlName="lastName"
+              type="text"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="mb-6 row">
+          <label for="inputText" class="col-sm-2 col-form-label"
+            >DocumentNumber</label
+          >
+          <div class="col-sm-5">
+            <input
+              formControlName="documentNumber"
+              type="text"
+              class="form-control"
+            />
+          </div>
+        </div>
+        <br />
+        <div class="mb-6 row">
+          <label for="inputText" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-5">
+            <input formControlName="Title" type="text" class="form-control" />
+          </div>
+        </div>
+        <br />
+        <div class="mb-6 row">
+          <label for="inputText" class="col-sm-2 col-form-label">Avatar</label>
+          <div class="col-sm-5">
+            <input formControlName="avatar" type="text" class="form-control" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="row">
+      <div
+        class="col-lg-2"
+        style="display: flex; justify-content: space-between"
+      >
+        <button
+          class="btn btn-secondary"
+          title="Volver a lista empleados"
+          routerLink="/listar"
+        >
+          <span style="margin: 5px"> < Atrás </span>
+        </button>
+      </div>
+    </div>
+  </form>
+  <div *ngIf="bandera">
+    <hr />
+    <div class="alert alert-primary" role="alert">
+      Se registro empleado con exito.
+    </div>
+  </div>
+</div>
